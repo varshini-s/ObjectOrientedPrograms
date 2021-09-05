@@ -54,7 +54,27 @@ public class StockAccountMain
 		String symbol = scanner.next();
 		int shares = scanner.nextInt();
 
-		
+		CompanyShares node1 = new CompanyShares(symbol, shares);
+		MyLinkedList<CompanyShares> obtainedStock= new MyLinkedList<CompanyShares>();
+
+
+		operations.buy(shares, symbol, portfolio.getStockList(), node1,obtainedStock,purchased,dateTime);
+
+
+		operations.printReport( obtainedStock,portfolio.getStockList());
+		operations.printReport(portfolio.getStockList());
+
+		System.out.println(dateTime);
+		System.out.println(purchased);
+
+
+		System.out.println("enter company and shares to sell ");
+		symbol = scanner.next();
+		shares = scanner.nextInt();
+		operations.sell(shares, symbol, stockList.getStockList(),purchased,dateTime);
+
+		operations.printReport( obtainedStock,portfolio.getStockList());
+		operations.printReport(portfolio.getStockList());
 
 
 
