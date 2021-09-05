@@ -13,6 +13,7 @@ public class InventoryManager
 		rice[0]=new InventoryFactory();
 		rice[0].setName("brown rice");
 		rice[0].setPricePerKg(10);
+		rice[0].setWeight(2);
 
 		InventoryFactory[] wheat = new InventoryFactory[1];
 		wheat[0]=new InventoryFactory();
