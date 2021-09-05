@@ -39,7 +39,23 @@ public class StockAccountMain
 
 
 
+		System.out.println("enter name of account");
+		String name=scanner.next();
+
+		System.out.println("enter balance of account");
+		int balance=scanner.nextInt();
+
+		StockAccount account = new StockAccount(name, balance);
+		account.setList(stockList);
+
+		StockAccountOperationsImpl operations  = new StockAccountOperationsImpl();
+
+		System.out.println("enter company and shares to buy from");
+		String symbol = scanner.next();
+		int shares = scanner.nextInt();
+
 		
+
 
 
 
