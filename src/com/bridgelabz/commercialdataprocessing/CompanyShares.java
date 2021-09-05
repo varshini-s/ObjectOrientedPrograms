@@ -22,6 +22,16 @@ public class CompanyShares
 		this.name = name;
 	}
 
+	public int getNumberOfShares() 
+	{
+		return numberOfShares;
+	}
+
+	public void setNumberOfShares(int numberOfShares) 
+	{
+		this.numberOfShares = numberOfShares;
+	}
+
 
 
 	
