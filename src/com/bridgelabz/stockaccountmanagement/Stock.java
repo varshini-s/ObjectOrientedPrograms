@@ -5,13 +5,13 @@ public class Stock
 {
 
 	private String name;
-	private int NUMBER;
+	private int numberOfShares;
 	private float sharePrice;
 
 	public Stock( String name, int numberOfShares, float sharePrice) 
 	{
 		this.name=name;
-		this.NUMBER=numberOfShares;
+		this.numberOfShares=numberOfShares;
 		this.sharePrice=sharePrice;
 	}
 
@@ -27,12 +27,12 @@ public class Stock
 
 	public int getNumberOfShares() 
 	{
-		return NUMBER;
+		return numberOfShares;
 	}
 
 	public void setNumberOfShares(int numberOfShares) 
 	{
-		this.NUMBER = numberOfShares;
+		this.numberOfShares = numberOfShares;
 	}
 
 	public float getSharePrice() 
