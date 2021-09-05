@@ -91,7 +91,7 @@ public class StockAccountOperationsImpl implements StockAccountOperationsIF
 
 
 	}
-	public void sell(int shares,String symbol,Stock list[],MyStack< String> stack ,MyQueue<String> dateTime)
+	public void sell(int shares,String symbol,Stock list[],MyStack< String> purchased ,MyQueue<String> dateTime)
 	{
 
 		for(int sharesListIndex=0;sharesListIndex<list.length;sharesListIndex++)
@@ -110,7 +110,7 @@ public class StockAccountOperationsImpl implements StockAccountOperationsIF
 					dateTime.enqueue(myNode);
 
 					myNode = new MyNode<String>(symbol);
-					stack.push(myNode);
+					purchased.push(myNode);
 				}
 
 
