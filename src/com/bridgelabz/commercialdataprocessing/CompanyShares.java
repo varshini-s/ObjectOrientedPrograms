@@ -1,0 +1,29 @@
+package com.bridgelabz.commercialdataprocessing;
+
+
+public class CompanyShares 
+{
+	private String name;
+	private int numberOfShares;
+
+	public CompanyShares( String name, int numberOfShares) 
+	{
+		this.name=name;
+		this.numberOfShares=numberOfShares;
+	}
+
+	public String getName() 
+	{
+		return name;
+	}
+
+	public void setName(String name) 
+	{
+		this.name = name;
+	}
+
+
+
+	
+	
+}
