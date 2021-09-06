@@ -1,40 +1,63 @@
 package com.bridgelabz.inventorymanagement;
 
+import java.util.Scanner;
 
-public class InventoryManager 
+import com.bridgelabz.datastructures.MyLinkedList;
+import com.bridgelabz.datastructures.MyNode;
+
+public class InventoryManager
 {
 
 	public static void main(String[] args) 
 
 	{
+		Scanner scanner = new Scanner(System.in);
 
-		InventoryFactory[] rice = new InventoryFactory[1];
+		MyLinkedList<InventoryFactory> inventoryList = new MyLinkedList<InventoryFactory>();
+		InventoryFactory rice = new InventoryFactory();
 
-		rice[0]=new InventoryFactory();
-		rice[0].setName("brown rice");
-		rice[0].setPricePerKg(10);
-		rice[0].setWeight(2);
+		rice.setName("Rice");
+		System.out.println("enter price perkg  of"+rice.getName());
+		rice.setPricePerKg(scanner.nextInt());
+		System.out.println("enter weight ");
+		rice.setWeight(scanner.nextInt());
+		MyNode<InventoryFactory> item1 = new MyNode<InventoryFactory>(rice);
 
-		InventoryFactory[] wheat = new InventoryFactory[1];
-		wheat[0]=new InventoryFactory();
+		inventoryList.appendNode(item1);
 
-		wheat[0].setName("soft wheat");
-		wheat[0].setPricePerKg(200);
-		wheat[0].setWeight(4);
+		InventoryFactory wheat = new InventoryFactory();
 
-		InventoryFactory[] pulses = new InventoryFactory[1];
-		pulses[0]=new InventoryFactory();
+		wheat.setName("Wheat");
+		System.out.println("enter price perkg  of"+wheat.getName());
+		wheat.setPricePerKg(scanner.nextInt());
+		System.out.println("enter weight ");
+		wheat.setWeight(scanner.nextInt());
+		MyNode<InventoryFactory> item2 = new MyNode<InventoryFactory>(wheat);
 
-		pulses[0].setName("beans");
-		pulses[0].setPricePerKg(30);
-		pulses[0].setWeight(3);
+		inventoryList.appendNode(item2);
+
+		InventoryFactory pulse = new InventoryFactory();
+
+		pulse.setName("Pulse");
+		System.out.println("enter price perkg  of"+pulse.getName());
+		pulse.setPricePerKg(scanner.nextInt());
+		System.out.println("enter weight ");
+		pulse.setWeight(scanner.nextInt());
+		MyNode<InventoryFactory> item3 = new MyNode<InventoryFactory>(pulse);
+
+		inventoryList.appendNode(item3);
 
 		InventoryOperationsImpl inventoryOperations = new InventoryOperationsImpl();
 
-		System.out.println(inventoryOperations.calculateInventoryTotal(rice));
+		
+		for(int index=0;index<inventoryList.size();index++)
+		{
+			InventoryFactory inventoryItem=inventoryList.getNode(index).getKey();
+	
+			System.out.println("Inventory total of :"+inventoryItem.getName()+" is "+inventoryOperations.calculateInventoryTotal(inventoryItem));
+		}
 
-
-
+		scanner.close();
 
 	}
 
